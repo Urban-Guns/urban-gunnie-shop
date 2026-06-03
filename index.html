@@ -73,10 +73,10 @@ button:hover{
 
 <div class="card">
 
-<h2>Karambit Dark Purple</h2>
+<h2>🔪 Karambit Dark Purple</h2>
 
-<p><b>Dura:</b> 50</p>
-<p><b>Prijs:</b> €112.500</p>
+<p class="dura">⚙️ Dura: 50</p>
+<p class="price">💰 €112.500</p>
 
 <input id="naam" placeholder="Ingame naam">
 
@@ -100,22 +100,22 @@ alert("Vul je naam en Discord in.");
 return;
 }
 
-fetch("https://script.google.com/macros/s/AKfycby4OM6nMs1NEbsPcAnWkx_IAKvkv_n6YaZYIp4DqBVUmhtMmR-t6KBq4siJX0IgqLIS/exec",{
-method:"POST",
-body:JSON.stringify({
-id:1,
-naam:naam,
-discord:discord
+fetch("https://script.google.com/macros/s/AKfycby4OM6nMs1NEbsPcAnWkx_IAKvkv_n6YaZYIp4DqBVUmhtMmR-t6KBq4siJX0IgqLIS/exec", {
+method: "POST",
+body: JSON.stringify({
+id: 1,
+naam: naam,
+discord: discord
 })
 })
-.then(r => r.text())
+.then(response => response.text())
 .then(data => {
 alert(data);
 })
-})
-.catch(err=>{
-alert("Er ging iets fout.");
+.catch(error => {
+alert("Fout: " + error);
 });
+
 }
 
 </script>

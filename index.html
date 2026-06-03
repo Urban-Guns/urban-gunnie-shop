@@ -108,9 +108,10 @@ naam:naam,
 discord:discord
 })
 })
-.then(r=>r.text())
-.then(data=>{
-alert("Reservering verzonden!");
+.then(r => r.text())
+.then(data => {
+alert(data);
+})
 })
 .catch(err=>{
 alert("Er ging iets fout.");

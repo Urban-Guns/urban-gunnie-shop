@@ -359,7 +359,23 @@ window.scrollTo({
   behavior:"smooth"
 });
 
-location.reload();
+const product =
+producten.find(p => p.id == id);
+
+if(product){
+  product.aantal--;
+}
+
+render();
+
+document.getElementById("naam_"+id).value = "";
+document.getElementById("discord_"+id).value = "";
+
+setTimeout(() => {
+  melding.className = "";
+  melding.innerHTML = "";
+}, 5000);
+
 return;
 
 }
